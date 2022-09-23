@@ -1,0 +1,15 @@
+@use 'variables' as v;
+
+@mixin sectionContainer($height, $padding, $bkcolor){
+    background-color: $bkcolor;
+    height: $height;
+    padding: $padding;
+}
+
+@mixin bottonHover(){
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid v.$Very-light-gray;
+    color: v.$Very-light-gray;
+    transition: 100ms;
+}

@@ -1,0 +1,112 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: v.$Very-light-gray;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-container{
+    margin: 50px 25px;
+    width: 325px;
+    border-radius: 10px;
+    overflow: hidden;
+    .section1{
+        @include m.sectionContainer(445px, 48px, v.$Bright-orange);
+    }
+    .section2{
+        @include m.sectionContainer(445px, 48px, v.$Dark-cyan);
+    }
+    .section3{
+        @include m.sectionContainer(445px, 48px, v.$Very-dark-cyan);
+    }
+
+    .section__img{
+        margin-bottom: 36px;
+    }
+    .section__title{
+        color: v.$Very-light-gray;
+        text-transform: uppercase;
+        font-family: v.$Font-Big-Shoulders-Display;
+        font-size: 2.4em;
+        margin-bottom: 25px;
+    }
+    .section__description{
+        color: v.$Transparen-white;
+        font-family: v.$Font-Lexend-Deca;
+        line-height: 25px;
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    
+    button{
+        background-color: v.$Very-light-gray;
+        border-style: none;
+        border-radius: 45px;
+        font-family: v.$Font-Lexend-Deca;
+        font-weight: 700;
+        width: 148px;
+        height: 46px;
+        font-size: 15px;
+    }
+
+    .section1__button{
+        color: v.$Bright-orange;
+        transition: 500ms;
+    }
+    .section1__button:hover{
+       @include m.bottonHover();
+    }
+
+    .section2__button{
+        color: v.$Dark-cyan; 
+        transition: 500ms;
+    }
+    .section2__button:hover{
+        @include m.bottonHover();
+    }
+
+    .section3__button{
+        color: v.$Very-dark-cyan;
+        transition: 500ms;
+    }
+    .section3__button:hover{
+        @include m.bottonHover();
+    }
+    @media (min-width: 900px){
+        display: flex;
+        width: 924px;
+        margin-top: 170px;
+        .section1{
+            height: 500px;
+        }
+        .section2{
+            height: 500px;
+        }
+        .section3{
+            height: 500px;
+        }
+        .section__description{
+            margin-bottom: 80px;
+        }
+    }
+}
+
+
+//====================== Footer =====================//
+.attribution { 
+    font-size: 12px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
